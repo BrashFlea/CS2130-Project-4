@@ -152,8 +152,13 @@ public class BMat {
 
 	public BMat meet(BMat M2) {
 		// Logical AND of current matrix with matrix M2
-		// Put code here...
-
+		BMat meetMatrix = new BMat(SIZE);
+		for(int r = 0; r < SIZE; r++) {
+		      for(int c = 0; c < SIZE; c++) {
+		    	  meetMatrix.M[r][c] = this.M[r][c] & M2.M[r][c];		    	  
+		      }
+		}
+		return meetMatrix;
 	}
 
 	public BMat transpose() {
