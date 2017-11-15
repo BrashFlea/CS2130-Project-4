@@ -163,7 +163,13 @@ public class BMat {
 
 	public BMat transpose() {
 		// Transpose of current matrix
-		// Put code here...
+		BMat transposeMatrix = new BMat(SIZE);
+		for(int r = 0; r < SIZE; r++) {
+		      for(int c = 0; c < SIZE; c++) {
+		    	  transposeMatrix.M[r][c] = this.M[c][r];
+		      }
+		}
+		return transposeMatrix;
 
 	}
 
