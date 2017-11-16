@@ -1,9 +1,88 @@
+// Project #4 test program
 package cs2130p4;
 
 public class P4Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	    // Boolean matrix definitions
+
+	    int A[][] = new int[][]
+	                {{1, 1, 0, 0, 1},
+	                 {1, 0, 1, 0, 0},
+	                 {0, 0, 0, 0, 0},
+	                 {1, 0, 0, 0, 0},
+	                 {0, 0, 1, 0, 1}};
+
+	    int B[][] = new int[][]
+	                {{0, 1, 0, 0, 1},
+	                 {0, 1, 1, 0, 0},
+	                 {1, 0, 1, 0, 0},
+	                 {1, 0, 0, 0, 0},
+	                 {0, 1, 0, 0, 1}};
+
+	    int C[][] = new int[][]
+	                {{0, 1, 0, 0, 0},
+	                 {0, 0, 1, 0, 0},
+	                 {0, 0, 0, 1, 0},
+	                 {1, 0, 0, 0, 1},
+	                 {0, 1, 0, 0, 0}};
+
+	    int D[][] = new int[][]
+	                {{1, 1, 0, 0, 0, 0},
+	                 {1, 1, 1, 0, 0, 0},
+	                 {0, 1, 1, 1, 0, 0},
+	                 {0, 0, 1, 1, 0, 0},
+	                 {0, 0, 0, 0, 0, 1},
+	                 {0, 0, 0, 0, 1, 1}};
+
+	    int E[][] = new int[][]
+	                {{0, 1, 1, 0, 0, 1},
+	                 {0, 1, 1, 0, 0, 1},
+	                 {0, 0, 1, 0, 0, 1},
+	                 {0, 0, 0, 0, 1, 1},
+	                 {0, 0, 0, 1, 1, 1},
+	                 {0, 0, 0, 0, 0, 0}};
+
+	    int F[][] = new int[][]
+	    {{0, 0, 0, 0, 1, 0, 1, 0, 0},
+	     {1, 0, 0, 1, 0, 0, 0, 0, 0},
+	     {0, 0, 0, 0, 0, 0, 0, 0, 0},
+	     {0, 0, 1, 0, 0, 0, 0, 1, 1},
+	     {0, 0, 0, 0, 0, 0, 0, 0, 0},
+	     {0, 1, 0, 0, 0, 0, 0, 0, 0},
+	     {0, 0, 0, 0, 0, 0, 0, 0, 0},
+	     {0, 0, 0, 0, 0, 0, 0, 0, 0},
+	     {0, 0, 0, 0, 0, 0, 0, 0, 0}};
+
+	    int G[][] = new int[][]
+	    {{0, 0, 0, 1, 0, 0, 0, 0, 0},
+	     {0, 0, 0, 0, 0, 0, 0, 0, 0},
+	     {1, 0, 0, 0, 0, 0, 0, 0, 0},
+	     {0, 0, 1, 0, 0, 1, 0, 0, 0},
+	     {0, 1, 0, 0, 0, 0, 1, 0, 1},
+	     {0, 0, 0, 0, 0, 0, 0, 1, 0},
+	     {0, 0, 0, 0, 0, 0, 0, 0, 0},
+	     {0, 0, 0, 0, 0, 0, 0, 0, 0},
+	     {0, 0, 0, 0, 0, 0, 0, 0, 0}};
+
+	     BMat BMA = new BMat(A);
+	     BMat BMB = new BMat(B);
+	     BMat BMC = new BMat(C);
+	     BMat BMD = new BMat(D);
+	     BMat BME = new BMat(E);
+	     BMat BMF = new BMat(F);
+	     BMat BMG = new BMat(G);
+	     
+	     System.out.println("Part A:");
+	     System.out.println("W = (C' AND (A OR B)) AND B'");
+	     BMat BMBC = BMB.complement();
+	     BMat BMCC = BMC.complement();
+	     BMat BMAB = BMA.join(BMB); // A OR B
+	     BMat CCAB = BMCC.meet(BMAB); // C' AND (A OR B)
+	     BMat CCBB = CCAB.meet(BMBC); // (C' AND (A OR B)) AND B'
+	     BMat Solution = CCBB;
+	     Solution.show();
+	     
 
 	}
 
