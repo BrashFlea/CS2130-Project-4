@@ -187,14 +187,24 @@ public class BMat {
 
 	public BMat tclosure() {
 		// Transitive closure of current matrix (Warshall's algorithm)
-		// Put code here...
+	    BMat tClosure = new BMat(this.M);
+	    for(int i = 0; i < SIZE; i++) {
+	        for(int j = 0; j < SIZE; j++) {
+	            for(int k = 0; k < SIZE; k++) {
+	                if(tClosure.M[j][k] != 1) {
+	                    tClosure.M[j][k] = tClosure.M[j][i] & tClosure.M[i][k];
+	                }
+	            }
+	        }
+	    }
+	    return tClosure;
 
 	}
 
 	public int rootnode() {
 		// Root node number (if any) of current matrix
-		// Nodes are numbered 0,1,2,...,SIZE-1
-		// Put code here...
+		// Nodes are numbered 0,1,2,...,SIZE-1	    
+
 
 	}
 
