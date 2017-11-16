@@ -94,6 +94,21 @@ public class P4Test {
          Solution = BTBCCT;
          Solution.show();
          addLine();
+         
+         System.out.println("Part C:");
+         System.out.println("W = C^18");
+         BMat C18 = BMC.power(18);
+         Solution = C18;
+         Solution.show();
+         addLine();
+         
+         System.out.println("part c:");
+         System.out.println("oC^18");
+         BMat partC = BMC;
+         for(int i = 1; i < 18; i++) {
+             partC = partC.product(BMC);
+         }
+         partC.show();
 
          
 	     
