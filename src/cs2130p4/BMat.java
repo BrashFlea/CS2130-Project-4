@@ -203,7 +203,25 @@ public class BMat {
 
 	public int rootnode() {
 		// Root node number (if any) of current matrix
-		// Nodes are numbered 0,1,2,...,SIZE-1	    
+		// Nodes are numbered 0,1,2,...,SIZE-1
+	    BMat W1 = new BMat(this.M);
+	    int node0 = 0;
+	    int node1 = 0;
+	    
+	    for(int i = 0; i < SIZE; i++) {
+	        if (W1.indegree(i) == 0) {
+	            node0 += 1;
+	        }
+	        else if (W1.indegree(i) == 1) {
+	            node1 += 1;
+	        }
+	    }
+	    if ((node0 == 1) && (node1 == (SIZE-1))) {
+	        return node0;
+	    }
+	    else {
+	        return -1;
+	    }
 
 
 	}
