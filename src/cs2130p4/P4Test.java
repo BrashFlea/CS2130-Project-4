@@ -82,8 +82,26 @@ public class P4Test {
 	     BMat CCBB = CCAB.meet(BMBC); // (C' AND (A OR B)) AND B'
 	     BMat Solution = CCBB;
 	     Solution.show();
+	     addLine();
+	     
+         System.out.println("Part B:");
+         System.out.println("W = (B^T * B) AND (C OR C^T)");
+         BMat BT = BMB.transpose(); // B^T
+         BMat CT = BMC.transpose(); // C^T
+         BMat BTB = BT.product(BMB); // B^T * B
+         BMat CCT = BMC.product(CT); // C OR C^T
+         BMat BTBCCT = BTB.meet(CCT); // (B^T * B) AND (C OR C^T)
+         Solution = BTBCCT;
+         Solution.show();
+         addLine();
+
+         
 	     
 
 	}
+	
+    public static void addLine() {
+        System.out.println("----------------");
+    }
 
 }
