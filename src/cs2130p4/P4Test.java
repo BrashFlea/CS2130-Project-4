@@ -139,6 +139,18 @@ public class P4Test {
          }
          System.out.println("Maximum out-degree of all nodes in D is: " + maxNode);
          addLine();
+         
+         System.out.println("Part G:");
+         System.out.println("W = symmetric closure of D. Is D symmetric?");
+         BMat DS = BMD.sclosure();
+         if (BMD.isEqual(DS)) {
+             System.out.println("Yes D is symmetric");
+         }
+         else {
+             System.out.println("No D is not symmetric");
+         }
+         addLine();
+
                   
          
 
