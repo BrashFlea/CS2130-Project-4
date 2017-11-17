@@ -127,7 +127,19 @@ public class P4Test {
          Solution.show();
          addLine();
          
+         System.out.println("Part F:");
+         System.out.println("X = maximum out-degree of all nodes in D");
          
+         int currNode, maxNode = 0;
+         for (int i = 0; i < BMD.SIZE; i++) {
+             currNode = BMD.outdegree(i);
+             if (currNode > maxNode) {
+                 maxNode = currNode;
+             }
+         }
+         System.out.println("Maximum out-degree of all nodes in D is: " + maxNode);
+         addLine();
+                  
          
 
          
