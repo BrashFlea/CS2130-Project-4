@@ -142,12 +142,23 @@ public class P4Test {
          
          System.out.println("Part G:");
          System.out.println("W = symmetric closure of D. Is D symmetric?");
-         BMat DS = BMD.sclosure();
-         if (BMD.isEqual(DS)) {
-             System.out.println("Yes D is symmetric");
+         BMat SD = BMD.sclosure();
+         if (BMD.isEqual(SD)) {
+             System.out.println("Yes, D is symmetric");
          }
          else {
-             System.out.println("No D is not symmetric");
+             System.out.println("No, D is not symmetric");
+         }
+         addLine();
+         
+         System.out.println("Part H:");
+         System.out.println("W = transitive closure of E. Is E transitive?");
+         BMat TD = BMD.tclosure();
+         if (BMD.isEqual(TD)) {
+             System.out.println("Yes, D is transitive");
+         }
+         else {
+             System.out.println("No, D is not transitive");
          }
          addLine();
 
