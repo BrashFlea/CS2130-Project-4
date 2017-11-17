@@ -109,10 +109,25 @@ public class P4Test {
          BMat DT = BMD.transpose(); // D^T
          BMat ET = BME.transpose(); // E^T
          BMat DTET = DT.join(ET); // D^T OR E^T
-         BMat DEDE = DET.meet(DTET); //(D OR E)^T AND (D^T OR E^T)
+         BMat DEDE = DET.meet(DTET); // (D OR E)^T AND (D^T OR E^T)
          Solution = DEDE;
          Solution.show();
          addLine();
+         
+         System.out.println("Part E:");
+         System.out.println("W = D^1 OR D^2 OR D^3 OR D^4");
+         BMat D1 = BMD.power(1);
+         BMat D2 = BMD.power(2);
+         BMat D3 = BMD.power(3);
+         BMat D4 = BMD.power(4);
+         BMat D1D2 = D1.join(D2); // D^1 OR D^2
+         BMat D3D4 = D3.join(D4); // D^3 OR D^4
+         BMat D1D2D3D4 = D1D2.join(D3D4); // D^1 OR D^2 OR D^3 OR D^4
+         Solution = D1D2D3D4;
+         Solution.show();
+         addLine();
+         
+         
          
 
          
