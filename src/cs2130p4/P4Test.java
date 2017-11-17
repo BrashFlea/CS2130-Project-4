@@ -102,17 +102,21 @@ public class P4Test {
          Solution.show();
          addLine();
          
-         System.out.println("part c:");
-         System.out.println("oC^18");
-         BMat partC = BMC;
-         for(int i = 1; i < 18; i++) {
-             partC = partC.product(BMC);
-         }
-         partC.show();
+         System.out.println("Part D:");
+         System.out.println("W = (D OR E)^T AND (D^T OR E^T)");
+         BMat DE = BMD.join(BME); // D OR E
+         BMat DET = DE.transpose(); // (D OR E)^T
+         BMat DT = BMD.transpose(); // D^T
+         BMat ET = BME.transpose(); // E^T
+         BMat DTET = DT.join(ET); // D^T OR E^T
+         BMat DEDE = DET.meet(DTET); //(D OR E)^T AND (D^T OR E^T)
+         Solution = DEDE;
+         Solution.show();
+         addLine();
+         
 
          
 	     
-
 	}
 	
     public static void addLine() {
