@@ -161,6 +161,35 @@ public class P4Test {
              System.out.println("No, D is not transitive");
          }
          addLine();
+         
+         System.out.println("Part I:");
+         System.out.println("Show that matrix F represents a tree");
+         System.out.println("A tree has a candidate root node and no cycles");
+         System.out.println("Matrix F has " + BMF.rootnode() + " candidate root node");
+         System.out.println("Matrix F has " + BMF.trace() + " cycles");
+         System.out.print("Therefore Matrix F is ");
+         if (BMF.rootnode() == 1) {
+             System.out.print("a tree");
+         }
+         else {
+             System.out.print("not a tree");
+         }
+         
+         System.out.println("Does the digraph have a root node?");
+         int rnode = BMF.rootnode();
+         if(rnode != -1)
+             System.out.println("Yes, " + rnode);
+         else
+             System.out.println("No");
+         
+         System.out.println("Does the digraph have any Cycles?");
+         BMat tmpBM1 = BMF.tclosure();
+         if( tmpBM1.trace() != 0) {
+             System.out.println("Yes");
+         }
+         else
+             System.out.println("No");
+         
 
                   
          
