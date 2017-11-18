@@ -4,6 +4,9 @@ package cs2130p4;
 public class P4Test {
 
 	public static void main(String[] args) {
+	    System.out.println("CS2130 Project 4 Part B");
+	    addLine();
+	    
 	    // Boolean matrix definitions
 
 	    int A[][] = new int[][]
@@ -166,40 +169,33 @@ public class P4Test {
          System.out.println("Show that matrix F represents a tree");
          System.out.println("A tree has a candidate root node and no cycles");
          System.out.println("Matrix F has " + BMF.rootnode() + " candidate root node");
-         System.out.println("Matrix F has " + BMF.trace() + " cycles");
+         System.out.println("Matrix F has " + BMF.tclosure().trace() + " cycles");
          System.out.print("Therefore Matrix F is ");
-         if (BMF.rootnode() == 1) {
-             System.out.print("a tree");
+         if (BMF.rootnode() == 1 && BMF.tclosure().trace() == 0) {
+             System.out.print("a tree" + "\n");
          }
          else {
-             System.out.print("not a tree");
+             System.out.print("not a tree" + "\n");
          }
+         addLine();
          
-         System.out.println("Does the digraph have a root node?");
-         int rnode = BMF.rootnode();
-         if(rnode != -1)
-             System.out.println("Yes, " + rnode);
-         else
-             System.out.println("No");
-         
-         System.out.println("Does the digraph have any Cycles?");
-         BMat tmpBM1 = BMF.tclosure();
-         if( tmpBM1.trace() != 0) {
-             System.out.println("Yes");
+         System.out.println("Part J:");
+         System.out.println("Show that matrix G does not represent a tree");
+         System.out.println("A tree has a candidate root node and no cycles");
+         System.out.println("Matrix G has " + BMG.rootnode() + " candidate root node");
+         System.out.println("Matrix G has " + BMG.tclosure().trace() + " cycles");
+         System.out.print("Therefore Matrix G is ");
+         if (BMG.rootnode() == 1 && BMG.tclosure().trace() == 0) {
+             System.out.print("a tree" + "\n");
          }
-         else
-             System.out.println("No");
-         
-
-                  
-         
-
-         
-	     
-	}
+         else {
+             System.out.print("not a tree" + "\n");
+         }
+   
+	} // end main
 	
     public static void addLine() {
         System.out.println("----------------");
     }
 
-}
+} // end class
