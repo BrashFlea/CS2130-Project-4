@@ -158,10 +158,10 @@ public class P4Test {
          System.out.println("W = transitive closure of E. Is E transitive?");
          BMat TD = BMD.tclosure();
          if (BMD.isEqual(TD)) {
-             System.out.println("Yes, D is transitive");
+             System.out.println("Yes, E is transitive");
          }
          else {
-             System.out.println("No, D is not transitive");
+             System.out.println("No, E is not transitive");
          }
          addLine();
          
