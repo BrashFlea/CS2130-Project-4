@@ -175,14 +175,17 @@ public class BMat {
 
 	public BMat product(BMat M2) {
 		// Boolean product of current matrix with matrix M2
-        BMat productMatrix = new BMat(SIZE);
-        for(int r = 0; r < SIZE; r++) {
-              for(int c = 0; c < SIZE; c++) {
-                  productMatrix.M[r][c] = (this.M[r][c] * M2.M[r][c]);
-              }
+	  BMat productMatrix  = new BMat(SIZE);
+    for(int r = 0; r < SIZE; r++){
+      for(int c = 0; c < SIZE; c++){
+        productMatrix .M[r][c] = 0;
+        for(int k = 0; k < SIZE; k++){
+          if(this.M[r][k] > 0 && M2.M[k][c] > 0)
+            productMatrix .M[r][c] = 1;
         }
-        return productMatrix;
-
+      }
+    }
+    return productMatrix;
 	}
 
 	public BMat tclosure() {
